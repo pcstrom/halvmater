@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmeldelser | Halv Mater</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://use.typekit.net/ukh3stv.css">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg:         #faf9f6;
+            --text:       #1c1c1a;
+            --text-mid:   #5a5248;
+            --text-light: #9a908a;
+            --border:     #e0dbd4;
+        }
+
+        body {
+            font-family: 'sabon', Georgia, 'Times New Roman', serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        header {
+            padding: 2.5rem 2rem 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+                .site-title {
+            display: block;
+            font-family: 'sabon', Georgia, 'Times New Roman', serif;
+            font-size: 2rem;
+            font-weight: normal;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem 0 2rem;
+        }
+
+        .site-nav {
+            margin-top: 2rem;
+            padding: 0.85rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--border);
+        }
+
+        .site-nav a {
+            font-family: sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--text-mid);
+        }
+
+        .site-nav a:hover { color: var(--text); }
+        .site-nav a.active { color: var(--text); }
+
+        main {
+            max-width: 660px;
+            margin: 0 auto;
+            padding: 5.5rem 2rem 7rem;
+        }
+
+        .page-title {
+            font-family: sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+        }
+
+        .reviews-list {
+            list-style: none;
+        }
+
+        .reviews-list li {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .reviews-list li:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        .reviews-list a {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 1.2rem 0;
+            text-decoration: none;
+            color: var(--text);
+            gap: 1rem;
+        }
+
+        .reviews-list a:hover .review-title {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .review-info { flex: 1; }
+
+        .review-title {
+            font-size: 1.05rem;
+
+            margin-bottom: 0.2rem;
+        }
+
+        .review-pub {
+            font-family: sans-serif;
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 0.77rem;
+            color: var(--text-light);
+            line-height: 2;
+        }
+
+        footer a { color: var(--text-light); text-decoration: none; }
+        footer a:hover { color: var(--text); }
+
+        @media (max-width: 540px) {
+            .site-nav { padding: 0.85rem 0.5rem; }
+            .site-nav a { letter-spacing: 0.1em; font-size: 0.65rem; }
+            main { padding: 3.5rem 1.5rem 5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="../index.html" class="site-title">Halv Mater</a>
+    <nav class="site-nav">
+        <a href="../forfattere/">Forfattere</a>
+        <a href="../musikk/">Musikk</a>
+        <a href="." class="active">Anmeldelser</a>
+    </nav>
+</header>
+
+<main>
+
+    <p class="page-title">Anmeldelser — Basaliteter</p>
+
+    <ul class="reviews-list">
+        <li>
+            <a href="avisa-nordland.html">
+                <span class="review-info">
+                    <span class="review-title">«Kortreiste dikt med lang rekkevidde»</span>
+                    <span class="review-pub">Avisa Nordland &nbsp;·&nbsp; Per-Lars Th. Eggesvik Woje</span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="utsidens-dyd.html">
+                <span class="review-info">
+                    <span class="review-title">«Utsidens dyd»</span>
+                    <span class="review-pub">Essayistisk lesning</span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="vinduet.html">
+                <span class="review-info">
+                    <span class="review-title">«Det halvfortærte»</span>
+                    <span class="review-pub">Vinduet</span>
+                </span>
+            </a>
+        </li>
+    </ul>
+
+</main>
+
+<footer>
+    Halv Mater forlag &nbsp;·&nbsp; <a href="mailto:utsyn@mpcu.no">utsyn@mpcu.no</a><br>
+    © 2026 Halv Mater
+</footer>
+
+</body>
+</html>

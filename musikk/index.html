@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musikk | Halv Mater</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://use.typekit.net/ukh3stv.css">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg:         #faf9f6;
+            --text:       #1c1c1a;
+            --text-mid:   #5a5248;
+            --text-light: #9a908a;
+            --border:     #e0dbd4;
+        }
+
+        body {
+            font-family: 'sabon', Georgia, 'Times New Roman', serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        header {
+            padding: 2.5rem 2rem 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .site-title {
+            display: block;
+            font-family: 'sabon', Georgia, 'Times New Roman', serif;
+            font-size: 2rem;
+            font-weight: normal;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem 0 2rem;
+        }
+
+        .site-nav {
+            margin-top: 2rem;
+            padding: 0.85rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--border);
+        }
+
+        .site-nav a {
+            font-family: sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--text-mid);
+        }
+
+        .site-nav a:hover { color: var(--text); }
+        .site-nav a.active { color: var(--text); }
+
+        main {
+            max-width: 660px;
+            margin: 0 auto;
+            padding: 5.5rem 2rem 7rem;
+        }
+
+        .page-title {
+            font-family: sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+        }
+
+        .album {
+            padding: 2.2rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .album:first-of-type { border-top: 1px solid var(--border); }
+
+        .album-title {
+            font-size: 1.15rem;
+            font-weight: normal;
+            margin-bottom: 0.3rem;
+        }
+
+        .album-artist {
+            font-family: sans-serif;
+            font-size: 0.78rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-mid);
+            margin-bottom: 1.4rem;
+        }
+
+        .stream-links {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .stream-link {
+            font-family: sans-serif;
+            font-size: 0.73rem;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            color: var(--text-mid);
+            border: 1px solid var(--border);
+            padding: 0.35rem 0.85rem;
+            border-radius: 2px;
+            transition: color 0.15s, border-color 0.15s;
+        }
+
+        .stream-link:hover {
+            color: var(--text);
+            border-color: var(--text-mid);
+        }
+
+        .intro {
+            font-size: 0.95rem;
+            color: var(--text-mid);
+            line-height: 1.85;
+            margin-bottom: 3rem;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 0.77rem;
+            color: var(--text-light);
+            line-height: 2;
+        }
+
+        footer a { color: var(--text-light); text-decoration: none; }
+        footer a:hover { color: var(--text); }
+
+        @media (max-width: 540px) {
+            .site-nav { padding: 0.85rem 0.5rem; }
+            .site-nav a { letter-spacing: 0.1em; font-size: 0.65rem; }
+            main { padding: 3.5rem 1.5rem 5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="../index.html" class="site-title">Halv Mater</a>
+    <nav class="site-nav">
+        <a href="../forfattere/">Forfattere</a>
+        <a href="." class="active">Musikk</a>
+        <a href="../anmeldelser/">Anmeldelser</a>
+    </nav>
+</header>
+
+<main>
+
+    <p class="page-title">Musikk</p>
+
+    <p class="intro">Henrik Bazaar har satt musikk til dikt av Kjetil Grunnvoll. To album er utgitt.</p>
+
+    <div class="album">
+        <h2 class="album-title">Basaliteter</h2>
+        <p class="album-artist">Henrik Bazaar &nbsp;·&nbsp; Kjetil Grunnvoll</p>
+        <div class="stream-links">
+            <a href="https://open.spotify.com/album/6ZmN2bFX4btRykpSyTfLTw?si=YmRu0o2VTauxvD5L_FB9OA" class="stream-link" target="_blank" rel="noopener">Spotify</a>
+            <a href="https://music.youtube.com/playlist?list=OLAK5uy_lOqFw9Coj9Am5_msQtcwbNHaY03AgTLmQ" class="stream-link" target="_blank" rel="noopener">YouTube Music</a>
+            <a href="https://tidal.com/album/386568974/u" class="stream-link" target="_blank" rel="noopener">Tidal</a>
+        </div>
+    </div>
+
+    <div class="album">
+        <h2 class="album-title">Tøft terreng</h2>
+        <p class="album-artist">Henrik Bazaar &nbsp;·&nbsp; Kjetil Grunnvoll</p>
+        <div class="stream-links">
+            <a href="https://open.spotify.com/album/58eWB7SHGxkXSHQKRrgxdT?si=tuw_-XfZTFu58FjYAVwS9A" class="stream-link" target="_blank" rel="noopener">Spotify</a>
+            <a href="https://music.youtube.com/playlist?list=OLAK5uy_mvhDw4Yp4H0zbfS5_xaW-kqtr9TXwVwJs&si=SoOrM1fV1e0hYhYK" class="stream-link" target="_blank" rel="noopener">YouTube Music</a>
+            <a href="https://tidal.com/album/259361925/u" class="stream-link" target="_blank" rel="noopener">Tidal</a>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    Halv Mater forlag &nbsp;·&nbsp; <a href="mailto:utsyn@mpcu.no">utsyn@mpcu.no</a><br>
+    © 2026 Halv Mater
+</footer>
+
+</body>
+</html>

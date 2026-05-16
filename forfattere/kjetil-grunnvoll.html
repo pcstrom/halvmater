@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kjetil Grunnvoll | Halv Mater</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://use.typekit.net/ukh3stv.css">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg:         #faf9f6;
+            --text:       #1c1c1a;
+            --text-mid:   #5a5248;
+            --text-light: #9a908a;
+            --border:     #e0dbd4;
+        }
+
+        body {
+            font-family: 'sabon', Georgia, 'Times New Roman', serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        header {
+            padding: 2.5rem 2rem 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+                .site-title {
+            display: block;
+            font-family: 'sabon', Georgia, 'Times New Roman', serif;
+            font-size: 2rem;
+            font-weight: normal;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem 0 2rem;
+        }
+
+        .site-nav {
+            margin-top: 2rem;
+            padding: 0.85rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--border);
+        }
+
+        .site-nav a {
+            font-family: sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--text-mid);
+        }
+
+        .site-nav a:hover { color: var(--text); }
+        .site-nav a.active { color: var(--text); }
+
+        main {
+            max-width: 660px;
+            margin: 0 auto;
+            padding: 5.5rem 2rem 7rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            font-family: sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            text-decoration: none;
+            margin-bottom: 4rem;
+        }
+
+        .back-link:hover { color: var(--text); }
+
+        .author-name {
+            font-size: 1.9rem;
+            font-weight: normal;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .author-genre {
+            font-family: sans-serif;
+            font-size: 0.78rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 3rem 0;
+        }
+
+        .bio p {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: var(--text);
+            margin-bottom: 1.4rem;
+        }
+
+        .bio p:last-child { margin-bottom: 0; }
+
+        .books-label {
+            font-family: sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: var(--text-light);
+            margin-bottom: 1.4rem;
+        }
+
+        .book-item {
+            padding: 1.1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .book-item:first-of-type { border-top: 1px solid var(--border); }
+
+        .book-item a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        .book-item a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+        .book-item-year {
+            font-family: sans-serif;
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-top: 0.2rem;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 0.77rem;
+            color: var(--text-light);
+            line-height: 2;
+        }
+
+        footer a { color: var(--text-light); text-decoration: none; }
+        footer a:hover { color: var(--text); }
+
+        @media (max-width: 540px) {
+            .site-nav { padding: 0.85rem 0.5rem; }
+            .site-nav a { letter-spacing: 0.1em; font-size: 0.65rem; }
+            main { padding: 3.5rem 1.5rem 5rem; }
+            .author-name { font-size: 1.45rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="../index.html" class="site-title">Halv Mater</a>
+    <nav class="site-nav">
+        <a href="./">Forfattere</a>
+        <a href="../musikk/">Musikk</a>
+        <a href="../anmeldelser/">Anmeldelser</a>
+    </nav>
+</header>
+
+<main>
+
+    <a href="../index.html" class="back-link">← Halv Mater</a>
+
+    <h1 class="author-name">Kjetil Grunnvoll</h1>
+    <p class="author-genre">Poesi &nbsp;·&nbsp; Roman &nbsp;·&nbsp; Historiske romaner</p>
+
+    <hr>
+
+    <div class="bio">
+        <p>Kjetil Grunnvoll er dikter og romanforfatter. Han har en særegen evne til å finne det presise i det tilsynelatende hverdagslige – og til å la det åpne seg mot noe større. Hans lyrikk er kjent for sin lakoniske kraft og sin nærhet til det sansebare.</p>
+        <p>Som romanforfatter har Grunnvoll gravd seg ned i norsk og nordeuropeisk historie og funnet karakterer og hendelser som taler overraskende direkte til samtiden. Hans historiske romaner er grundig forankret i tid og sted, men drives like mye av stemning og indre liv som av ytre handling.</p>
+        <p>Grunnvoll bor og arbeider i Nord-Norge.</p>
+    </div>
+
+    <hr>
+
+    <p class="books-label">Utgivelser på Halv Mater</p>
+
+    <div class="book-item">
+        <a href="../index.html">Basaliteter</a>
+        <p class="book-item-year">Diktsamling &nbsp;·&nbsp; 2026</p>
+    </div>
+
+</main>
+
+<footer>
+    Halv Mater forlag &nbsp;·&nbsp; <a href="mailto:utsyn@mpcu.no">utsyn@mpcu.no</a><br>
+    © 2026 Halv Mater
+</footer>
+
+</body>
+</html>
