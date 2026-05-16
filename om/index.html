@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musikk | Halv Mater</title>
+    <title>Om | Halv Mater</title>
+    <meta name="description" content="Om Halv Mater – et uavhengig forlag og bokbinderi.">
     <meta name="robots" content="noindex">
     <link rel="stylesheet" href="https://use.typekit.net/ukh3stv.css">
     <style>
@@ -39,7 +40,15 @@
             text-transform: uppercase;
             color: var(--text);
             text-decoration: none;
-            padding: 0.5rem 0 2rem;
+            padding: 0.5rem 0 0.5rem;
+        }
+        .site-subtitle {
+            display: block;
+            font-family: 'sabon', Georgia, 'Times New Roman', serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--text-mid);
+            padding-bottom: 2rem;
         }
 
         .site-nav {
@@ -58,7 +67,6 @@
             text-decoration: none;
             color: var(--text-mid);
         }
-
         .site-nav a:hover { color: var(--text); }
         .site-nav a.active { color: var(--text); }
 
@@ -77,56 +85,30 @@
             margin-bottom: 2.5rem;
         }
 
-        .album {
-            padding: 2.2rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .album:first-of-type { border-top: 1px solid var(--border); }
-
-        .album-title {
-            font-size: 1.15rem;
-            font-weight: normal;
-            margin-bottom: 0.3rem;
-        }
-
-        .album-artist {
-            font-family: sans-serif;
-            font-size: 0.78rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--text-mid);
+        .about-body p {
+            font-size: 1.02rem;
+            line-height: 1.9;
             margin-bottom: 1.4rem;
         }
 
-        .stream-links {
-            display: flex;
-            gap: 0.6rem;
-            flex-wrap: wrap;
+        .about-body h2 {
+            font-family: 'sabon', Georgia, 'Times New Roman', serif;
+            font-weight: normal;
+            font-size: 1.25rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.04em;
         }
 
-        .stream-link {
+        .placeholder-note {
+            margin-top: 4rem;
+            padding: 1.3rem 1.5rem;
+            background: #f4f0eb;
+            border-left: 2px solid var(--text-light);
             font-family: sans-serif;
-            font-size: 0.73rem;
-            letter-spacing: 0.08em;
-            text-decoration: none;
+            font-size: 0.83rem;
             color: var(--text-mid);
-            border: 1px solid var(--border);
-            padding: 0.35rem 0.85rem;
-            border-radius: 2px;
-            transition: color 0.15s, border-color 0.15s;
-        }
-
-        .stream-link:hover {
-            color: var(--text);
-            border-color: var(--text-mid);
-        }
-
-        .intro {
-            font-size: 0.95rem;
-            color: var(--text-mid);
-            line-height: 1.85;
-            margin-bottom: 3rem;
+            line-height: 1.75;
         }
 
         footer {
@@ -138,7 +120,6 @@
             color: var(--text-light);
             line-height: 2;
         }
-
         footer a { color: var(--text-light); text-decoration: none; }
         footer a:hover { color: var(--text); }
 
@@ -153,45 +134,49 @@
 
 <header>
     <a href="../index.html" class="site-title">Halv Mater</a>
+    <span class="site-subtitle">Et uavhengig forlag og bokbinderi</span>
     <nav class="site-nav">
         <a href="../forfattere/">Forfattere</a>
-        <a href="." class="active">Musikk</a>
+        <a href="../musikk/">Musikk</a>
         <a href="../anmeldelser/">Anmeldelser</a>
-        <a href="../om/">Om</a>
+        <a href="." class="active">Om</a>
     </nav>
 </header>
 
 <main>
 
-    <p class="page-title">Musikk</p>
+    <p class="page-title">Om Halv Mater</p>
 
-    <p class="intro">Henrik Bazaar har satt musikk til dikt av Kjetil Grunnvoll. To album er utgitt.</p>
+    <div class="about-body">
 
-    <div class="album">
-        <h2 class="album-title">Basaliteter</h2>
-        <p class="album-artist">Henrik Bazaar &nbsp;·&nbsp; Kjetil Grunnvoll</p>
-        <div class="stream-links">
-            <a href="https://open.spotify.com/album/6ZmN2bFX4btRykpSyTfLTw?si=YmRu0o2VTauxvD5L_FB9OA" class="stream-link" target="_blank" rel="noopener">Spotify</a>
-            <a href="https://music.youtube.com/playlist?list=OLAK5uy_lOqFw9Coj9Am5_msQtcwbNHaY03AgTLmQ" class="stream-link" target="_blank" rel="noopener">YouTube Music</a>
-            <a href="https://tidal.com/album/386568974/u" class="stream-link" target="_blank" rel="noopener">Tidal</a>
-        </div>
+        <p>[Innledende avsnitt – kommer fra Per Christian.]</p>
+
+        <h2>Bok som håndverk</h2>
+
+        <p>[Om håndverket – binding, materialer, prosess.]</p>
+
+        <h2>Redaksjon og utvalg</h2>
+
+        <p>[Om hvilke bøker forlaget gir ut, og hvorfor.]</p>
+
+        <h2>Kontakt</h2>
+
+        <p>E-post: <a href="mailto:utsyn@mpcu.no">utsyn@mpcu.no</a><br>
+        Vipps: 99 03 11 30</p>
+
+        <p>Halv Mater drives av enkeltpersonforetaket Strøm Epitecphro (org.nr. 928 973 042).</p>
+
     </div>
 
-    <div class="album">
-        <h2 class="album-title">Tøft terreng</h2>
-        <p class="album-artist">Henrik Bazaar &nbsp;·&nbsp; Kjetil Grunnvoll</p>
-        <div class="stream-links">
-            <a href="https://open.spotify.com/album/58eWB7SHGxkXSHQKRrgxdT?si=tuw_-XfZTFu58FjYAVwS9A" class="stream-link" target="_blank" rel="noopener">Spotify</a>
-            <a href="https://music.youtube.com/playlist?list=OLAK5uy_mvhDw4Yp4H0zbfS5_xaW-kqtr9TXwVwJs&si=SoOrM1fV1e0hYhYK" class="stream-link" target="_blank" rel="noopener">YouTube Music</a>
-            <a href="https://tidal.com/album/259361925/u" class="stream-link" target="_blank" rel="noopener">Tidal</a>
-        </div>
+    <div class="placeholder-note">
+        <strong>Plassholdertekst.</strong> Denne siden venter på endelig innhold fra Per Christian.
     </div>
 
 </main>
 
 <footer>
     Halv Mater forlag &nbsp;·&nbsp; <a href="mailto:utsyn@mpcu.no">utsyn@mpcu.no</a><br>
-    © 2026 Halv Mater
+    © 2026 Halv Mater &nbsp;·&nbsp; drives av Strøm Epitecphro (org.nr. 928 973 042)
 </footer>
 
 </body>
