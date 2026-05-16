@@ -90,25 +90,34 @@
             line-height: 1.9;
             margin-bottom: 1.4rem;
         }
+        .about-body em { font-style: italic; }
+        .about-body strong { font-weight: 600; }
 
-        .about-body h2 {
-            font-family: 'sabon', Georgia, 'Times New Roman', serif;
-            font-weight: normal;
-            font-size: 1.25rem;
+        .contact-label {
+            font-family: sans-serif;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: var(--text-light);
             margin-top: 3rem;
             margin-bottom: 1rem;
-            letter-spacing: 0.04em;
         }
+        .contact-info {
+            font-size: 1.02rem;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+        }
+        .contact-info a { color: var(--text); text-decoration: none; border-bottom: 1px dotted var(--text-light); }
+        .contact-info a:hover { border-bottom-color: var(--text); }
 
-        .placeholder-note {
-            margin-top: 4rem;
-            padding: 1.3rem 1.5rem;
-            background: #f4f0eb;
-            border-left: 2px solid var(--text-light);
-            font-family: sans-serif;
-            font-size: 0.83rem;
+        .signoff {
+            margin-top: 3.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            font-style: italic;
+            font-size: 0.95rem;
             color: var(--text-mid);
-            line-height: 1.75;
+            text-align: center;
         }
 
         footer {
@@ -149,27 +158,31 @@
 
     <div class="about-body">
 
-        <p>[Innledende avsnitt – kommer fra Per Christian.]</p>
+        <p><strong>Halv Mater</strong> er et lite forlag og bokverksted i Kabelvåg.</p>
 
-        <h2>Bok som håndverk</h2>
+        <p>Vi gir form til bøker som kanskje ikke trenger store opplag, men som likevel fortjener en ordentlig ytre skikkelse.</p>
 
-        <p>[Om håndverket – binding, materialer, prosess.]</p>
+        <p>Navnet er delvis alvor, delvis trykkerimytologi. I maskinsetteriets tid kunne <em>mater</em> brukes om matrisene — de små formene bokstavene ble støpt fra. I de gamle settemaskinene fantes det også <em>halvmuttere</em>: mekaniske klemmer som grep tak i transportskruer og satte deler av maskineriet i bevegelse.</p>
 
-        <h2>Redaksjon og utvalg</h2>
+        <p>Et sted mellom matrise, mater, mor di og halvmutter har vi <strong>Halv Mater</strong>: ikke helt maskin, ikke helt hånd; ikke helt tradisjonelt forlag, ikke helt privat verksted.</p>
 
-        <p>[Om hvilke bøker forlaget gir ut, og hvorfor.]</p>
+        <p>Det passer egentlig ganske godt. Her blir bøker til i en prosess som er delvis digital og delvis håndgjort. Tekstene skrives, føyes, redigeres og settes på skjerm, før de flytes, skrives ut, angres, skjæres, prøves, limes, krüppes, falses, presses og limfreses for hånd. Halv Mater arbeider under overrommet i mellomgangen til tekst og ting.</p>
 
-        <h2>Kontakt</h2>
+        <p>Forlaget gir ut smale, litterære og visuelt-litterære kombinasjonsprosjekter i små opplag. Det kan dreie seg om poesi, kortprosa, fragmenter, tekster i utkanten av sjanger, eller andre arbeider med tydelig egenart — for spesielle for masseproduksjon, men for unike til å dø, for å si det med en fri hilsen til Hunter S. Thompson.</p>
 
-        <p>E-post: <a href="mailto:utsyn@mpcu.no">utsyn@mpcu.no</a><br>
-        Vipps: 99 03 11 30</p>
+        <p>Halv Mater tar imot åpne manus og ideer, og arbeider med utvalgte prosjekter i tett dialog med opphavspersonene. Ta gjerne kontakt!</p>
 
-        <p>Halv Mater drives av enkeltpersonforetaket Strøm Epitecphro (org.nr. 928 973 042).</p>
+        <p>Halv Mater drives av Per Christian Strøm gjennom enkeltpersonforetaket <strong>Strøm Epitecphro</strong>.</p>
 
-    </div>
+        <p class="contact-label">Kontakt</p>
 
-    <div class="placeholder-note">
-        <strong>Plassholdertekst.</strong> Denne siden venter på endelig innhold fra Per Christian.
+        <p class="contact-info">
+            <a href="mailto:pc@mpcu.no">pc@mpcu.no</a><br>
+            <a href="https://halvmater.no">halvmater.no</a>
+        </p>
+
+        <p class="signoff">— Halvgjort blir utgitt.</p>
+
     </div>
 
 </main>
