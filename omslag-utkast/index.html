@@ -609,21 +609,25 @@
   
   <style>
     :root { --hm-bg: #faf9f6; --hm-text: #1c1c1a; --hm-mid: #5a5248; --hm-light: #9a908a; --hm-border: #e0dbd4; }
-    body { background: var(--hm-bg) !important; }
-    .hm-header { padding: 2.5rem 2rem 0; text-align: center; border-bottom: 1px solid var(--hm-border); font-family: 'sabon', Georgia, 'Times New Roman', serif; background: var(--hm-bg); }
+    /* Override cover body/flex so halvmater header fills full width */
+    body { background: var(--hm-bg) !important; align-items: stretch !important; padding: 0 !important; }
+    .hm-header { width: 100%; padding: 2.5rem 2rem 0; text-align: center; border-bottom: 1px solid var(--hm-border); font-family: 'sabon', Georgia, 'Times New Roman', serif; background: var(--hm-bg); box-sizing: border-box; }
     .hm-site-logo { display: block; height: 195px; width: auto; margin: 0 auto; }
     .hm-subtitle { display: block; font-style: italic; font-size: 1.1rem; color: var(--hm-mid); margin-top: -2rem; padding-bottom: 5rem; }
-    .hm-nav { margin-top: 0; width: 100%; padding: 0.85rem 2rem; display: flex; justify-content: space-between; border-top: 1px solid var(--hm-border); }
-    .hm-nav a { font-family: sans-serif; font-size: 0.63rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; color: var(--hm-mid); }
+    .hm-nav { margin-top: 0; width: 100%; padding: 0.85rem 2rem; display: flex !important; justify-content: space-between; border-top: 1px solid var(--hm-border); box-sizing: border-box; }
+    .hm-nav a { font-family: sans-serif !important; font-size: 0.63rem; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; color: var(--hm-mid); display: inline !important; }
     .hm-nav a:hover { color: var(--hm-text); }
-    .hm-page-intro { text-align: center; padding: 4rem 2rem 3.5rem; border-bottom: 1px solid var(--hm-border); font-family: 'sabon', Georgia, serif; }
+    .hm-page-intro { width: 100%; text-align: center; padding: 4rem 2rem 3.5rem; border-bottom: 1px solid var(--hm-border); font-family: 'sabon', Georgia, serif; box-sizing: border-box; }
     .hm-page-intro h1 { font-size: 0.65rem; font-family: sans-serif; letter-spacing: 0.22em; text-transform: uppercase; color: var(--hm-light); font-weight: normal; margin-bottom: 0.5rem; }
     .hm-page-intro p { font-size: 0.9rem; font-style: italic; color: var(--hm-mid); }
-    .hm-footer { border-top: 1px solid var(--hm-border); padding: 2.5rem 2rem; text-align: center; font-family: sans-serif; font-size: 0.77rem; color: var(--hm-light); line-height: 2; }
+    .spread-clip { margin-top: 3rem !important; }
+    /* Fix legend/dim-note colours (designed for dark bg) */
+    .legend { color: var(--hm-mid) !important; margin-bottom: 0.5rem; }
+    .leg-panel { border-top-color: var(--hm-border) !important; }
+    .dim-note { color: var(--hm-light) !important; padding-bottom: 3rem; }
+    .hm-footer { width: 100%; border-top: 1px solid var(--hm-border); padding: 2.5rem 2rem; text-align: center; font-family: sans-serif; font-size: 0.77rem; color: var(--hm-light); line-height: 2; box-sizing: border-box; }
     .hm-footer a { color: var(--hm-light); text-decoration: none; }
     .hm-footer a:hover { color: var(--hm-text); }
-    /* Wrap spread with padding */
-    body > .spread-clip, body > .spread-section { padding-top: 3rem; }
   </style>
 </head>
 <body>
