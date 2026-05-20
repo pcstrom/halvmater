@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="nb">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Omslagutkast – Basaliteter | Halv Mater</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="https://use.typekit.net/ukh3stv.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -24,7 +28,7 @@
             line-height: 1.7;
         }
 
-        /* ── Header (identisk med resten av siden) ── */
+        /* ── Header ── */
         header {
             padding: 2.5rem 2rem 0;
             text-align: center;
@@ -68,73 +72,207 @@
 
         .site-nav a:hover { color: var(--text); }
 
-        /* ── Innhold ── */
-        main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 5rem 2rem 7rem;
-        }
-
+        /* ── Sidetittel ── */
         .page-intro {
-            max-width: 560px;
-            margin: 0 auto 4rem;
             text-align: center;
+            padding: 4rem 2rem 3.5rem;
+            border-bottom: 1px solid var(--border);
         }
 
         .page-intro h1 {
-            font-size: 1.05rem;
-            font-weight: normal;
-            font-family: sans-serif;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--text-mid);
-            margin-bottom: 1rem;
-        }
-
-        .page-intro p {
-            font-size: 0.92rem;
-            color: var(--text-light);
-            font-style: italic;
-        }
-
-        /* ── Omslag-kort ── */
-        .cover-list {
-            display: flex;
-            flex-direction: column;
-            gap: 5rem;
-        }
-
-        .cover-item {}
-
-        .cover-label {
-            font-family: sans-serif;
             font-size: 0.65rem;
+            font-family: sans-serif;
             letter-spacing: 0.22em;
             text-transform: uppercase;
             color: var(--text-light);
-            margin-bottom: 1rem;
+            font-weight: normal;
+            margin-bottom: 0.5rem;
         }
 
-        .cover-label strong {
+        .page-intro p {
+            font-size: 0.9rem;
+            font-style: italic;
             color: var(--text-mid);
-            font-weight: 600;
         }
 
-        .cover-img-wrap {
-            border: 1px solid var(--border);
-            line-height: 0;
+        /* ── Innbrett-visning ── */
+        .spread-section {
+            padding: 4rem 0 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .cover-img-wrap img {
+        /* ================================================================
+           BASALITETER — 5-panels komplett omslagsutbrett med innbrett
+           Baksideinnbrett | Bakside | Rygg | Forside | Forsideinnbrett
+           Mål: 80 + 135 + 4.6 + 135 + 80 = 434.6 mm × 210 mm
+           ================================================================ */
+
+        .spread-wrapper {
+            --cover-bg:  #f1ead8;
+            --ink:       #1a1815;
+            --accent:    #b48a3c;
+            --fold:      rgba(180, 138, 60, 0.55);
+            font-family: "EB Garamond", Georgia, serif;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
-            height: auto;
+        }
+
+        .spread-clip {
+            width: calc(434.6mm * 0.55);
+            height: calc(210mm * 0.55);
+            overflow: visible;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .spread {
+            display: grid;
+            grid-template-columns: 80mm 135mm 4.6mm 135mm 80mm;
+            height: 210mm;
+            background: var(--cover-bg);
+            color: var(--ink);
+            box-shadow: 0 16px 60px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.07);
+            flex-shrink: 0;
+            transform: scale(0.55);
+            transform-origin: top center;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: calc(-434.6mm / 2);
+        }
+
+        .pnl {
+            height: 210mm;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .flap-back  { border-right: 0.35mm dashed var(--fold); }
+        .flap-front { border-left:  0.35mm dashed var(--fold); }
+
+        /* Baksideinnbrett */
+        .flap-back {
+            padding: 16mm 11mm 14mm 13mm;
+            display: flex;
+            flex-direction: column;
+        }
+        .bio-section-label {
+            font-family: ui-sans-serif, system-ui, sans-serif;
+            font-size: 20px;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            opacity: 0.65;
+            zoom: 0.55;
+            margin-bottom: 7mm;
             display: block;
         }
+        .bio-text { font-size: 16px; line-height: 1.58; zoom: 0.72; color: var(--ink); }
+        .bio-text p + p { margin-top: 0.9em; }
 
-        hr.divider {
-            border: none;
-            border-top: 1px solid var(--border);
-            margin: 3rem 0 0;
+        /* Bakside */
+        .panel-back {
+            border-left:  0.15mm solid rgba(26,24,21,0.12);
+            border-right: 0.15mm solid rgba(26,24,21,0.12);
+            padding: 16mm 12mm 14mm 26mm;
+            display: flex;
+            flex-direction: column;
+        }
+        .poem-block { margin-top: 10mm; font-size: 6.5mm; line-height: 1.55; font-style: italic; }
+        .poem-gap { height: 2.5mm; }
+        .back-strip {
+            margin-top: auto;
+            border-top: 0.2mm solid rgba(26,24,21,0.22);
+            padding-top: 3.5mm;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+        .strip-l { display: flex; flex-direction: column; gap: 1.5mm; }
+        .strip-r { display: flex; flex-direction: column; align-items: flex-end; gap: 1.5mm; }
+        .strip-isbn {
+            font-family: ui-monospace, Menlo, monospace;
+            font-size: 20px; letter-spacing: 2px; color: var(--ink);
+            white-space: nowrap; zoom: 0.55; display: block;
+        }
+        .strip-pub {
+            font-family: ui-sans-serif, system-ui, sans-serif;
+            font-size: 20px; letter-spacing: 3.5px; color: var(--ink);
+            opacity: 0.85; white-space: nowrap; zoom: 0.55; display: block;
+        }
+        .logo { display: block; }
+
+        /* Rygg */
+        .spine {
+            border-left:  0.15mm solid rgba(26,24,21,0.12);
+            border-right: 0.15mm solid rgba(26,24,21,0.12);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 7mm 0 5.5mm;
+            overflow: hidden;
+        }
+        .spine-yr { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 4.5px; letter-spacing: 0.3px; opacity: 0.4; }
+
+        /* Forside */
+        .panel-front {
+            border-left:  0.15mm solid rgba(26,24,21,0.12);
+            border-right: 0.15mm solid rgba(26,24,21,0.12);
+            padding: 16mm 14mm 14mm;
+            display: flex;
+            flex-direction: column;
+        }
+        .front-genre { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 3mm; letter-spacing: 1mm; text-transform: uppercase; opacity: 0.78; }
+        .front-spacer { flex: 1; }
+        .front-title { font-size: 17mm; line-height: 1.0; font-weight: 500; letter-spacing: -0.15mm; }
+        .front-author { margin-top: 4mm; font-size: 5mm; font-style: italic; opacity: 0.85; }
+        .front-footer { margin-top: auto; font-family: ui-sans-serif, system-ui, sans-serif; font-size: 2.6mm; letter-spacing: 0.75mm; opacity: 0.75; text-transform: uppercase; }
+
+        /* Forsideinnbrett */
+        .flap-front { padding: 16mm 12mm 14mm 11mm; display: flex; flex-direction: column; }
+        .toc-label {
+            font-family: ui-sans-serif, system-ui, sans-serif;
+            font-size: 20px; letter-spacing: 3.5px; text-transform: uppercase;
+            opacity: 0.65; zoom: 0.55; display: block; margin-bottom: 6mm;
+        }
+        .toc-list { zoom: 0.68; display: flex; flex-direction: column; gap: 0px; }
+        .toc-entry { display: flex; flex-direction: column; padding: 2px 0; }
+        .toc-entry + .toc-entry           { margin-top: 1px; }
+        .toc-entry.has-sub + .toc-entry   { margin-top: 3px; }
+        .toc-entry + .toc-entry.has-sub   { margin-top: 2px; }
+        .toc-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+        .toc-title { font-size: 16px; line-height: 1.3; flex: 1; color: var(--ink); }
+        .toc-page { font-family: ui-sans-serif, system-ui, sans-serif; font-size: 14px; color: var(--ink); opacity: 0.65; flex-shrink: 0; min-width: 18px; text-align: right; }
+        .toc-sub { font-size: 14px; font-style: italic; color: var(--ink); opacity: 0.72; line-height: 1.25; padding-left: 0; }
+
+        /* Legend */
+        .legend {
+            margin-top: 22px;
+            display: flex;
+            gap: 24px;
+            font-family: sans-serif;
+            font-size: 0.68rem;
+            color: var(--text-light);
+            letter-spacing: 0.03em;
+        }
+        .leg { display: flex; align-items: center; gap: 8px; }
+        .leg-line { width: 22px; height: 0; }
+        .leg-fold  { border-top: 1.5px dashed rgba(180,138,60,0.9); }
+        .leg-panel { border-top: 1px solid var(--border); }
+        .dim-note {
+            margin-top: 10px;
+            font-family: sans-serif;
+            font-size: 0.65rem;
+            color: var(--text-light);
+            letter-spacing: 0.02em;
+            text-align: center;
+            padding-bottom: 4rem;
         }
 
         /* ── Footer ── */
@@ -147,21 +285,19 @@
             color: var(--text-light);
             line-height: 2;
         }
-
         footer a { color: var(--text-light); text-decoration: none; }
         footer a:hover { color: var(--text); }
 
         @media (max-width: 540px) {
             .site-nav { padding: 0.85rem 0.5rem; }
             .site-nav a { letter-spacing: 0.1em; font-size: 0.57rem; }
-            main { padding: 3rem 1.2rem 5rem; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="../index.html" class="site-title">
+    <a href="../index.html">
         <img class="site-logo" src="../hm-logo.png" alt="Halv Mater">
     </a>
     <span class="site-subtitle">Et uavhengig forlag og bokbinderi</span>
@@ -173,54 +309,201 @@
     </nav>
 </header>
 
-<main>
+<div class="page-intro">
+    <h1>Omslagutkast</h1>
+    <p>Basaliteter &nbsp;·&nbsp; Kjetil Grunnvoll &nbsp;·&nbsp; Halv Mater, 2026</p>
+</div>
 
-    <div class="page-intro">
-        <h1>Omslagutkast</h1>
-        <p>Basaliteter &nbsp;·&nbsp; Kjetil Grunnvoll &nbsp;·&nbsp; Halv Mater, 2026<br>
-        Fem utkast til vurdering.</p>
+<div class="spread-section">
+
+    <div class="spread-wrapper">
+        <div class="spread-clip">
+        <div class="spread">
+
+            <!-- Baksideinnbrett -->
+            <div class="pnl flap-back">
+                <span class="bio-section-label">Om forfatteren</span>
+                <div class="bio-text">
+                    <p>Kjetil Grunnvoll er dikter og romanforfatter. Han har en særegen evne til å finne det presise i det tilsynelatende hverdagslige – og til å la det åpne seg mot noe større. Hans lyrikk er kjent for sin lakoniske kraft og sin nærhet til det sansebare.</p>
+                    <p>Som romanforfatter har Grunnvoll gravd seg ned i norsk og nordeuropeisk historie og funnet karakterer og hendelser som taler overraskende direkte til samtiden. Hans historiske romaner er grundig forankret i tid og sted, men drives like mye av stemning og indre liv som av ytre handling.</p>
+                    <p>Grunnvoll bor og skriver i Nord-Norge.</p>
+                </div>
+            </div>
+
+            <!-- Bakside -->
+            <div class="pnl panel-back">
+                <div class="poem-block">
+                    <div>Jeg har bare</div>
+                    <div>disse ordene</div>
+                    <div class="poem-gap"></div>
+                    <div>disse ordene</div>
+                    <div>er alt</div>
+                    <div>jeg har</div>
+                </div>
+                <div class="back-strip">
+                    <div class="strip-l">
+                        <svg width="20mm" height="7mm" viewBox="0 0 200 70" preserveAspectRatio="none" style="display:block;">
+                            <rect x="0"   width="10" height="70" fill="#1a1815"/>
+                            <rect x="13"  width="3"  height="70" fill="#1a1815"/>
+                            <rect x="19"  width="10" height="70" fill="#1a1815"/>
+                            <rect x="32"  width="3"  height="70" fill="#1a1815"/>
+                            <rect x="38"  width="10" height="70" fill="#1a1815"/>
+                            <rect x="51"  width="3"  height="70" fill="#1a1815"/>
+                            <rect x="57"  width="7"  height="70" fill="#1a1815"/>
+                            <rect x="67"  width="3"  height="70" fill="#1a1815"/>
+                            <rect x="73"  width="10" height="70" fill="#1a1815"/>
+                            <rect x="86"  width="3"  height="70" fill="#1a1815"/>
+                            <rect x="92"  width="7"  height="70" fill="#1a1815"/>
+                            <rect x="102" width="10" height="70" fill="#1a1815"/>
+                            <rect x="115" width="3"  height="70" fill="#1a1815"/>
+                            <rect x="121" width="3"  height="70" fill="#1a1815"/>
+                            <rect x="127" width="7"  height="70" fill="#1a1815"/>
+                            <rect x="137" width="10" height="70" fill="#1a1815"/>
+                            <rect x="150" width="3"  height="70" fill="#1a1815"/>
+                            <rect x="156" width="10" height="70" fill="#1a1815"/>
+                            <rect x="169" width="3"  height="70" fill="#1a1815"/>
+                            <rect x="175" width="10" height="70" fill="#1a1815"/>
+                            <rect x="188" width="3"  height="70" fill="#1a1815"/>
+                            <rect x="194" width="6"  height="70" fill="#1a1815"/>
+                        </svg>
+                        <span class="strip-isbn">ISBN 9 788293 044171</span>
+                    </div>
+                    <div class="strip-r">
+                        <img class="logo" src="../hm-logo.png" width="22" height="22" alt="Halv Mater Forlag">
+                        <span class="strip-pub">HALV MATER FORLAG</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rygg -->
+            <div class="pnl spine">
+                <svg width="4.6mm" height="90mm" viewBox="0 0 46 900" style="display:block; flex:1;">
+                    <text
+                        transform="translate(34, 450) rotate(-90)"
+                        text-anchor="middle"
+                        font-family='"EB Garamond", Georgia, serif'
+                        font-size="54"
+                        letter-spacing="3"
+                        fill="#1a1815"
+                    >Basaliteter</text>
+                </svg>
+                <img class="logo" src="../hm-logo.png" width="11" height="11" style="opacity:0.75;" alt="HM">
+            </div>
+
+            <!-- Forside -->
+            <div class="pnl panel-front">
+                <div class="front-genre">Dikt</div>
+                <div class="front-spacer"></div>
+                <div class="front-title">Basaliteter</div>
+                <div class="front-author">Kjetil Grunnvoll</div>
+                <div class="front-spacer" style="flex:1.5;"></div>
+                <div class="front-footer">HALV MATER FORLAG</div>
+            </div>
+
+            <!-- Forsideinnbrett -->
+            <div class="pnl flap-front">
+                <span class="toc-label">Innhold</span>
+                <div class="toc-list">
+                    <div class="toc-entry has-sub">
+                        <div class="toc-row"><span class="toc-title">Omnia mea mecum porto</span><span class="toc-page">1</span></div>
+                        <div class="toc-sub">Basalt ordforråd</div>
+                    </div>
+                    <div class="toc-entry has-sub">
+                        <div class="toc-row"><span class="toc-title">Inabsentius</span><span class="toc-page">2</span></div>
+                        <div class="toc-sub">Basalt fravær</div>
+                    </div>
+                    <div class="toc-entry">
+                        <div class="toc-row"><span class="toc-title">Basal selvskading</span><span class="toc-page">3</span></div>
+                    </div>
+                    <div class="toc-entry">
+                        <div class="toc-row"><span class="toc-title">Basal darwinisme</span><span class="toc-page">4</span></div>
+                    </div>
+                    <div class="toc-entry has-sub">
+                        <div class="toc-row"><span class="toc-title">under månen drikker jeg</span><span class="toc-page">5</span></div>
+                        <div class="toc-sub">Sub luna bibo</div>
+                    </div>
+                    <div class="toc-entry">
+                        <div class="toc-row"><span class="toc-title">Basalt alter ego</span><span class="toc-page">7</span></div>
+                    </div>
+                    <div class="toc-entry">
+                        <div class="toc-row"><span class="toc-title">Basal trøst</span><span class="toc-page">8</span></div>
+                    </div>
+                    <div class="toc-entry has-sub">
+                        <div class="toc-row"><span class="toc-title">lys og skygge er vi</span><span class="toc-page">9</span></div>
+                        <div class="toc-sub">Lumen et umbra sumus</div>
+                    </div>
+                    <div class="toc-entry">
+                        <div class="toc-row"><span class="toc-title">Basal alkoholisme</span><span class="toc-page">12</span></div>
+                    </div>
+                    <div class="toc-entry has-sub">
+                        <div class="toc-row"><span class="toc-title">otium cum dignitate</span><span class="toc-page">13</span></div>
+                        <div class="toc-sub">Basal bortgang</div>
+                    </div>
+                    <div class="toc-entry">
+                        <div class="toc-row"><span class="toc-title">Basal tenkning</span><span class="toc-page">14</span></div>
+                    </div>
+                    <div class="toc-entry">
+                        <div class="toc-row"><span class="toc-title">Basal egenerklæring</span><span class="toc-page">15</span></div>
+                    </div>
+                    <div class="toc-entry">
+                        <div class="toc-row"><span class="toc-title">Basal ekvilibrisme</span><span class="toc-page">16</span></div>
+                    </div>
+                    <div class="toc-entry has-sub">
+                        <div class="toc-row"><span class="toc-title">eller basal antakelse?</span><span class="toc-page">18</span></div>
+                        <div class="toc-sub">Basal tro</div>
+                    </div>
+                    <div class="toc-entry has-sub">
+                        <div class="toc-row"><span class="toc-title">Hjalmar Ekdal in memoriam</span><span class="toc-page">20</span></div>
+                        <div class="toc-sub">Basal selvinnsikt</div>
+                    </div>
+                    <div class="toc-entry">
+                        <div class="toc-row"><span class="toc-title">Basale patinerte sannheter</span><span class="toc-page">21</span></div>
+                    </div>
+                    <div class="toc-entry has-sub">
+                        <div class="toc-row"><span class="toc-title">mater in memoriam</span><span class="toc-page">22</span></div>
+                        <div class="toc-sub">Basalt brennoffer</div>
+                    </div>
+                    <div class="toc-entry has-sub">
+                        <div class="toc-row"><span class="toc-title">skån den gravlagte</span><span class="toc-page">23</span></div>
+                        <div class="toc-sub">Parce sepulto</div>
+                    </div>
+                    <div class="toc-entry has-sub">
+                        <div class="toc-row"><span class="toc-title">dårlige dager</span><span class="toc-page">25</span></div>
+                        <div class="toc-sub">Basalt livsmisbruk</div>
+                    </div>
+                    <div class="toc-entry">
+                        <div class="toc-row"><span class="toc-title">Vargtimen</span><span class="toc-page">27</span></div>
+                    </div>
+                    <div class="toc-entry">
+                        <div class="toc-row"><span class="toc-title">Til min frisør</span><span class="toc-page">29</span></div>
+                    </div>
+                    <div class="toc-entry">
+                        <div class="toc-row"><span class="toc-title">Basal etterlysning</span><span class="toc-page">30</span></div>
+                    </div>
+                    <div class="toc-entry">
+                        <div class="toc-row"><span class="toc-title">Ryōkan in memoriam</span><span class="toc-page">31</span></div>
+                    </div>
+                    <div class="toc-entry">
+                        <div class="toc-row"><span class="toc-title">Basalt stoffskifte</span><span class="toc-page">32</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- .spread -->
+        </div><!-- .spread-clip -->
+
+        <div class="legend">
+            <div class="leg"><div class="leg-line leg-fold"></div> Falsekant (innbrett)</div>
+            <div class="leg"><div class="leg-line leg-panel"></div> Rygg / panelkant</div>
+        </div>
+        <div class="dim-note">
+            Totalt utbrett: 434,6 × 210 mm &nbsp;·&nbsp;
+            Innbrett: 80 mm &nbsp;·&nbsp; Panel: 135 mm &nbsp;·&nbsp; Rygg: 4,6 mm &nbsp;·&nbsp;
+            Skrift: EB Garamond &nbsp;·&nbsp; Bakgrunn: #f1ead8
+        </div>
     </div>
 
-    <div class="cover-list">
-
-        <div class="cover-item">
-            <p class="cover-label"><strong>V1</strong> &nbsp;—&nbsp; Klassisk</p>
-            <div class="cover-img-wrap">
-                <img src="V1 _ Klassisk.png" alt="Omslagutkast V1 – Klassisk">
-            </div>
-        </div>
-
-        <div class="cover-item">
-            <p class="cover-label"><strong>V2</strong> &nbsp;—&nbsp; Modernist band</p>
-            <div class="cover-img-wrap">
-                <img src="V2 _ Modernist band.png" alt="Omslagutkast V2 – Modernist band">
-            </div>
-        </div>
-
-        <div class="cover-item">
-            <p class="cover-label"><strong>V3</strong> &nbsp;—&nbsp; Dyp natt</p>
-            <div class="cover-img-wrap">
-                <img src="V3 _ Dyp natt.png" alt="Omslagutkast V3 – Dyp natt">
-            </div>
-        </div>
-
-        <div class="cover-item">
-            <p class="cover-label"><strong>V4</strong> &nbsp;—&nbsp; Stoisk negativrom</p>
-            <div class="cover-img-wrap">
-                <img src="V4 _ Stoisk negativrom.png" alt="Omslagutkast V4 – Stoisk negativrom">
-            </div>
-        </div>
-
-        <div class="cover-item">
-            <p class="cover-label"><strong>V5</strong> &nbsp;—&nbsp; Typografisk skala</p>
-            <div class="cover-img-wrap">
-                <img src="V5 _ Typografisk skala.png" alt="Omslagutkast V5 – Typografisk skala">
-            </div>
-        </div>
-
-    </div>
-
-</main>
+</div><!-- .spread-section -->
 
 <footer>
     Halv Mater forlag &nbsp;·&nbsp; <a href="mailto:utsyn@mpcu.no">utsyn@mpcu.no</a><br>
