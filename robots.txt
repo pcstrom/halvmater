@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /omslag-utkast/
+
+Sitemap: https://halvmater.no/sitemap.xml
