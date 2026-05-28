@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <title>Basaliteter — V1 trykk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: #888;
+      font-family: "EB Garamond", Georgia, serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---- physical dimensions ---- */
+    :root {
+      --panel:  135mm;
+      --spine:    4.6mm;
+      --h:      210mm;
+      --total:  calc(var(--panel) * 2 + var(--spine));
+      --bg:     #f1ead8;
+      --ink:    #1a1815;
+      --accent: #b48a3c;
+      --pad:    16mm;
+      --pad-l:  26mm; /* back outer padding — more air on outside edge */
+    }
+
+    .page {
+      width:  var(--total);
+      height: var(--h);
+      display: grid;
+      grid-template-columns: var(--panel) var(--spine) var(--panel);
+      background: var(--bg);
+      color: var(--ink);
+      margin: 20mm auto;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+    }
+
+    /* ========== BACK PANEL ========== */
+    .back {
+      padding: 20mm var(--pad) 15mm var(--pad-l);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .poem {
+      margin-top: 10mm;
+      font-size: 6.5mm;
+      line-height: 1.55;
+      font-style: italic;
+    }
+    .poem-gap { height: 2.5mm; }
+    .spacer { flex: 1; }
+    /* zoom whole strip so text stays within panel — zoom shrinks layout box */
+    .strip {
+      border-top: 0.2mm solid rgba(26,24,21,0.25);
+      padding-top: 3.5mm;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 4mm;
+      zoom: 0.55;
+    }
+    .strip-left { display: flex; flex-direction: column; gap: 3mm; flex-shrink: 0; }
+    .barcode-svg { display: block; }
+    .strip-text { white-space: nowrap; }
+    .isbn-text {
+      font-family: ui-monospace, Menlo, monospace;
+      font-size: 20px;
+      letter-spacing: 2px;
+      color: var(--ink);
+    }
+    .strip-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 3mm;
+      flex-shrink: 0;
+    }
+    .publisher-name {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 20px;
+      letter-spacing: 3px;
+      color: var(--ink);
+      opacity: 0.85;
+    }
+    .logo-img { display: block; width: 11mm; height: 11mm; }
+
+    /* ========== SPINE ========== */
+    .spine {
+      border-left:  0.15mm solid rgba(26,24,21,0.13);
+      border-right: 0.15mm solid rgba(26,24,21,0.13);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7mm 0 5.5mm;
+      overflow: hidden;
+    }
+    .spine-year {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 1.8mm;
+      letter-spacing: 0.2mm;
+      opacity: 0.4;
+    }
+    .spine-title {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 2.8mm;
+      letter-spacing: 0.15mm;
+      white-space: nowrap;
+    }
+    .spine-logo { display: block; width: 3mm; height: 3mm; opacity: 0.75; }
+
+    /* ========== FRONT PANEL ========== */
+    .front {
+      padding: 16mm var(--pad) 15mm;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .front-genre {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 3mm;
+      letter-spacing: 1mm;
+      text-transform: uppercase;
+      opacity: 0.78;
+    }
+    .front-title {
+      margin-top: auto;
+      font-size: 17mm;
+      line-height: 1.0;
+      font-weight: 500;
+      letter-spacing: -0.15mm;
+    }
+    .front-author {
+      margin-top: 4mm;
+      font-size: 5mm;
+      font-style: italic;
+      opacity: 0.85;
+    }
+    .front-footer {
+      margin-top: auto;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 2.6mm;
+      letter-spacing: 0.75mm;
+      opacity: 0.75;
+      text-transform: uppercase;
+    }
+
+    /* Screen: scale page to fit viewport */
+    @media screen {
+      html, body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10mm;
+      }
+      .page {
+        transform-origin: center center;
+        transform: scale(0.72);
+      }
+    }
+
+    /* Print: exact physical size, landscape A4, single page */
+    @media print {
+      @page { size: A4 landscape; margin: 0; }
+      html, body {
+        background: white;
+        width: 297mm;
+        height: 210mm;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        display: block;
+      }
+      .page {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: none;
+        margin: 0;
+      }
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- BACK -->
+  <div class="back">
+    <div class="poem">
+      <div>Jeg har bare</div>
+      <div>disse ordene</div>
+      <div class="poem-gap"></div>
+      <div>disse ordene</div>
+      <div>er alt</div>
+      <div>jeg har</div>
+    </div>
+    <div class="spacer"></div>
+    <div class="strip">
+      <div class="strip-left">
+        <!-- barcode -->
+        <svg class="barcode-svg" width="20mm" height="7mm" viewBox="0 0 200 70" preserveAspectRatio="none">
+          <!-- bars generated from pattern -->
+          <rect x="0"   width="10" height="70" fill="#1a1815"/>
+          <rect x="13"  width="3"  height="70" fill="#1a1815"/>
+          <rect x="19"  width="10" height="70" fill="#1a1815"/>
+          <rect x="32"  width="3"  height="70" fill="#1a1815"/>
+          <rect x="38"  width="10" height="70" fill="#1a1815"/>
+          <rect x="51"  width="3"  height="70" fill="#1a1815"/>
+          <rect x="57"  width="7"  height="70" fill="#1a1815"/>
+          <rect x="67"  width="3"  height="70" fill="#1a1815"/>
+          <rect x="73"  width="10" height="70" fill="#1a1815"/>
+          <rect x="86"  width="3"  height="70" fill="#1a1815"/>
+          <rect x="92"  width="7"  height="70" fill="#1a1815"/>
+          <rect x="102" width="10" height="70" fill="#1a1815"/>
+          <rect x="115" width="3"  height="70" fill="#1a1815"/>
+          <rect x="121" width="3"  height="70" fill="#1a1815"/>
+          <rect x="127" width="7"  height="70" fill="#1a1815"/>
+          <rect x="137" width="10" height="70" fill="#1a1815"/>
+          <rect x="150" width="3"  height="70" fill="#1a1815"/>
+          <rect x="156" width="10" height="70" fill="#1a1815"/>
+          <rect x="169" width="3"  height="70" fill="#1a1815"/>
+          <rect x="175" width="10" height="70" fill="#1a1815"/>
+          <rect x="188" width="3"  height="70" fill="#1a1815"/>
+          <rect x="194" width="6"  height="70" fill="#1a1815"/>
+        </svg>
+        <div class="strip-text isbn-text">ISBN 9 788293 044171</div>
+      </div>
+      <div class="strip-right">
+        <img class="logo-img" src="assets/hm-logo.png" alt="HM">
+        <div class="strip-text publisher-name">HALV MATER FORLAG</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPINE -->
+  <div class="spine">
+    <div class="spine-year">2026</div>
+    <div class="spine-title">Basaliteter</div>
+    <img class="spine-logo" src="assets/hm-logo.png" alt="HM">
+  </div>
+
+  <!-- FRONT -->
+  <div class="front">
+    <div class="front-genre">Dikt</div>
+    <div class="front-title">Basaliteter</div>
+    <div class="front-author">Kjetil Grunnvoll</div>
+    <div class="front-footer">HALV MATER FORLAG</div>
+  </div>
+
+</div>
+
+<script>
+  // Auto-print after fonts load
+  document.fonts.ready.then(function() {
+    setTimeout(function() { window.print(); }, 600);
+  });
+</script>
+
+</body>
+</html>
