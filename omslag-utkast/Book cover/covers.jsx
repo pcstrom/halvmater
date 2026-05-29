@@ -4,7 +4,7 @@
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "accentColor": "#b48a3c",
   "title": "Basaliteter",
-  "author": "Kjetil Grunnvoll",
+  "author": "Georg Grunnvoll",
   "publisher": "HALV MATER FORLAG",
   "spineYear": "2026",
   "showCropMarks": true,
@@ -23,7 +23,7 @@ const COVER_H = Math.round(HEIGHT_MM * PX_PER_MM);  // 735
 const COVER_W = PANEL_W * 2 + SPINE_W;              // 960
 
 const BLURB = `En liten samling dikt om aleneheten som valg. Om det som glir bort i stillhet, og om humoren som melder seg når alvoret har gått hjem.`;
-const BLURB_TAIL = `Basaliteter er Kjetil Grunnvolls første utgivelse.`;
+const BLURB_TAIL = `Basaliteter er Georg Grunnvolls første utgivelse.`;
 const POEM = ['Jeg har bare', 'disse ordene', '', 'disse ordene', 'er alt', 'jeg har'];
 const ISBN_TEXT = '9 788293 044171';
 
@@ -537,7 +537,7 @@ const V5 = ({ t }) => {
           fontFamily: 'ui-sans-serif, system-ui, sans-serif',
           fontSize: 10, letterSpacing: 2.6, textTransform: 'uppercase', opacity: 0.78,
         }}>
-          <span>Kjetil Grunnvoll</span>
+          <span>Georg Grunnvoll</span>
           <span>Dikt {t.spineYear}</span>
         </div>
         <div style={{ height: 14 }} />

@@ -10,7 +10,7 @@ Standalone nettside for Halv Mater forlag, hostet via GitHub Pages på domenet *
 
 ## Innhold
 
-- Forsiden viser gjeldende utgivelse: **Basaliteter av Kjetil Grunnvoll** (diktsamling, 329 kr / 479 kr bok+CD)
+- Forsiden viser gjeldende utgivelse: **Basaliteter av Georg Grunnvoll** (diktsamling, 329 kr / 479 kr bok+CD)
 - Bestilling via Vipps (99031130) og e-post (utsyn@mpcu.no)
 - Nav: Forfattere | Musikk | Anmeldelser
 
@@ -29,7 +29,7 @@ Standalone nettside for Halv Mater forlag, hostet via GitHub Pages på domenet *
     prins-eric-hamtorst.html   ← fiktiv
     elvira-madiganske.html     ← fiktiv
   musikk/
-    index.html             ← to album av Henrik Bazaar & Kjetil Grunnvoll
+    index.html             ← to album av Henrik Bazaar & Georg Grunnvoll
   anmeldelser/
     index.html
     avisa-nordland.html    ← «Kortreiste dikt med lang rekkevidde»
@@ -53,11 +53,11 @@ Standalone nettside for Halv Mater forlag, hostet via GitHub Pages på domenet *
 ## Forfattersider
 
 Ligger i `forfattere/`. Alle tre sider bruker samme stilmall som forsiden.
-Kjetil Grunnvoll er eneste forfatter med faktisk utgivelse — Hamtørst og Madiganske er fiktive plassholdere.
+Georg Grunnvoll er eneste forfatter med faktisk utgivelse — Hamtørst og Madiganske er fiktive plassholdere.
 
 ## Aktuell utgivelse
 
-**Basaliteter** av Kjetil Grunnvoll — diktsamling, Halv Mater 2026
+**Basaliteter** av Georg Grunnvoll — diktsamling, Halv Mater 2026
 Pris: 329 kr (bok) / 479 kr (bok + CD)
 Bokbilde: `basaliteter.jpg` (midlertidig — byttes ut når endelig bilde er klart)
 
