@@ -26,7 +26,7 @@ Standalone nettside for Halv Mater forlag, hostet via GitHub Pages på domenet *
   forfattere/
     index.html
     kjetil-grunnvoll.html
-    prins-eric-hamtorst.html   ← fiktiv
+    prins-eric-hamtorst.html   ← Per Christians alter ego (anagram av Per Christian Strøm)
     elvira-madiganske.html     ← fiktiv
   musikk/
     index.html             ← to album av Henrik Bazaar & Georg Grunnvoll
@@ -48,12 +48,18 @@ Standalone nettside for Halv Mater forlag, hostet via GitHub Pages på domenet *
 ## Bestilling
 
 - Vipps: **99031130**, merk med «Basaliteter» + postadresse
-- E-post: **utsyn@mpcu.no**
+- E-post: **forlag@halvmater.no**
+
+## E-poststrategi
+
+- **forlag@halvmater.no** — bestillinger, generell kontakt, administrative ting («kontoret»)
+- **red@halvmater.no** — redaksjonelle og kunstneriske henvendelser («redaktøren»)
+- **utsyn@mpcu.no** — kontakt knyttet til Strøm Epitecphro som eier av forlaget; brukes i footer ved siden av org.nr.-linjen
 
 ## Forfattersider
 
 Ligger i `forfattere/`. Alle tre sider bruker samme stilmall som forsiden.
-Georg Grunnvoll er eneste forfatter med faktisk utgivelse — Hamtørst og Madiganske er fiktive plassholdere.
+Georg Grunnvoll er eneste forfatter med faktisk utgivelse. Hamtørst er Per Christians alter ego (anagram av Per Christian Strøm) — kan utvikles. Madiganske er fiktiv plassholder.
 
 ## Aktuell utgivelse
 
@@ -74,3 +80,13 @@ Bokbilde: `basaliteter.jpg` (midlertidig — byttes ut når endelig bilde er kla
 - Ren HTML/CSS — ingen rammeverk, ingen build-steg
 - Norsk språk i all tekst på sidene
 - Nøkternt, litterært uttrykk — ikke overdesigne
+
+## Arbeidsregler for Claude
+
+- **Aldri overdesigne.** Når du er i tvil: gjør mindre. Sjekk alltid eksisterende sider for mønster før du lager noe nytt.
+- **Bevar stilkonsistens.** Nye sider kopierer HTML-struktur fra nærmeste eksisterende side — samme `<head>`, samme navigasjon, samme CSS-variabler.
+- **Ikke endre `<link>`-taggen til Typekit** — fontene er avhengige av nøyaktig denne URL-en.
+- **Ikke bruk JavaScript** uten eksplisitt forespørsel. Siden er ren HTML/CSS.
+- **Bekreft før strukturelle endringer** (nye seksjoner i nav, endring av URL-struktur, nytt forfatteroppsett). Redaksjonelle/tekstlige endringer kan gjøres direkte.
+- **Git:** Commit etter fullførte, logiske enheter — ikke etter hvert filsteg. Commit-meldinger på norsk, korte og beskrivende.
+- **Fiktive forfattere** (Madiganske): Behandles som plassholder — ikke utvid innholdet uten eksplisitt ønske. Hamtørst er Per Christians alter ego og kan utvikles.
