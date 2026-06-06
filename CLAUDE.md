@@ -88,5 +88,5 @@ Bokbilde: `basaliteter.jpg` (midlertidig — byttes ut når endelig bilde er kla
 - **Ikke endre `<link>`-taggen til Typekit** — fontene er avhengige av nøyaktig denne URL-en.
 - **Ikke bruk JavaScript** uten eksplisitt forespørsel. Siden er ren HTML/CSS.
 - **Bekreft før strukturelle endringer** (nye seksjoner i nav, endring av URL-struktur, nytt forfatteroppsett). Redaksjonelle/tekstlige endringer kan gjøres direkte.
-- **Git:** Commit etter fullførte, logiske enheter — ikke etter hvert filsteg. Commit-meldinger på norsk, korte og beskrivende.
+- **Git:** Commit etter fullførte, logiske enheter — ikke etter hvert filsteg. Commit-meldinger på norsk, korte og beskrivende. Claude kjører **ikke** git-kommandoer fra sandboxen (etterlater låsfiler) — gi Per Christian kommandoene å kjøre i terminalen.
 - **Fiktive forfattere** (Madiganske): Behandles som plassholder — ikke utvid innholdet uten eksplisitt ønske. Hamtørst er Per Christians alter ego og kan utvikles.
