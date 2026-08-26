@@ -45,10 +45,21 @@ Standalone nettside for Halv Mater forlag, hostet via GitHub Pages på domenet *
 - Minimalistisk layout, maks 660px bredde
 - På forsiden er site-title en `<span>` (ikke lenke); på undersider er det `<a href="../index.html">`
 
-## Bestilling
+## Bestilling — PÅ PAUSE (fra 26.08.2026)
 
-- Vipps: **99031130**, merk med «Basaliteter» + postadresse
-- E-post: **forlag@halvmater.no**
+Bestilling er midlertidig av. På forsiden viser begge produktradene **«Kommer»** der pris og
+kjøpslenker sto; seksjonsoverskriften er endret fra «Bestill» til «Utgaver», og notatet med
+Vipps-nr. og adresse-påminnelse er fjernet.
+
+- CSS-klassene `.price`, `.buy-buttons`, `.buy-link`, `.vipps-mark` og `.buy-note` står igjen
+  ubrukt med vilje — da trengs bare HTML tilbake når salget åpner igjen.
+- **Slik gjenopprettes det:** `git show <commit-før-pausen>:index.html` og hent tilbake de to
+  `.product-right`-blokkene + `p.buy-note`.
+- Betalingslenkene i Vipps (`betal.vipps.no/rtefog` = 329 kr, `betal.vipps.no/eat3qe` = 479 kr)
+  ligger **utenfor** dette repoet og må deaktiveres/aktiveres i portal.vipps.no.
+
+Når salget var åpent: Vipps **99031130** (merk med «Basaliteter» + postadresse),
+e-post **forlag@halvmater.no**.
 
 ## E-poststrategi
 
